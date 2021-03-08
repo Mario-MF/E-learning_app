@@ -1,3 +1,4 @@
+import 'package:elearningflutter/screens/HomePage/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -122,6 +123,29 @@ class introLoginPage extends StatelessWidget {
                                ),
                              )),
                        ),
+                     ),
+                   ),
+                 ),
+                 Container(
+                   child: InkWell(
+                     onTap: () {
+                       Navigator.pushReplacement(
+                           context, MaterialPageRoute(builder: (BuildContext context) => HomaPage()));
+                     },
+                     child: Padding(
+                       padding:
+                       const EdgeInsets.only(left: 12, right: 12, bottom: 20),
+                       child: Center(
+                           child: Text(
+                             'Skip Now to continue',
+                             style: TextStyle(
+                               color: Colors.black,
+                               fontSize: 15,
+                               fontWeight: FontWeight.w900,
+                               letterSpacing: 2.0,
+                               fontFamily: 'AndikaNewBasic',
+                             ),
+                           )),
                      ),
                    ),
                  ),

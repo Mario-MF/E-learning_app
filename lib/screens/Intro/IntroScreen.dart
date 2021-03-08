@@ -1,3 +1,4 @@
+import 'package:elearningflutter/loginPages/intrologipnage.dart';
 import 'package:flutter/material.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -42,45 +43,37 @@ class _IntroScreenState extends State<IntroScreen> {
                     fontFamily: 'AndikaNewBasic',
                       ),
                 )),
-                Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    Column(
+                Column(
 
-                      children: [
-                        Container(
-                          height: 600,
-                          width: 800,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assest/images/imageintro.jpg'),
-                            )
+                  children: [
+                    Container(
+                      height: 600,
+                      width: 800,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assest/images/imageintro.jpg'),
+                        )
+                      ),
+                    ),
+                    Center(
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.pushReplacement(
+                              context, MaterialPageRoute(builder: (BuildContext context) => introLoginPage()));                        },
+                        child:  Padding(
+                          padding: const EdgeInsets.only(left: 12,right: 12,bottom: 20),
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(horizontal: 50,vertical: 8),
+                            decoration: BoxDecoration(
+                              color: Color(0xffec4c48),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(child: Text('GetStart',style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.w900,letterSpacing: 2.0,fontFamily: 'AndikaNewBasic',),)),
+
                           ),
                         ),
-                        Positioned(
-                          bottom: 100,
-                          left: 0,
-                          right: 0,
-                          child:  Center(
-                            child: InkWell(
-                              onTap: (){},
-                              child:  Padding(
-                                padding: const EdgeInsets.only(left: 12,right: 12,bottom: 20),
-                                child: Container(
-                                  width: double.infinity,
-                                  padding: EdgeInsets.symmetric(horizontal: 50,vertical: 8),
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffec4c48),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Center(child: Text('GetStart',style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.w900,letterSpacing: 2.0,fontFamily: 'AndikaNewBasic',),)),
-
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
+                      ),
                     )
                   ],
                 )

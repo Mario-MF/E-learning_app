@@ -1,3 +1,5 @@
+import 'package:elearningflutter/loginPages/intrologipnage.dart';
+import 'package:elearningflutter/screens/coursescreen/CourseScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -6,6 +8,42 @@ class HomaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: Container(
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                  color: Color(0xff7e9ded),
+                  borderRadius: BorderRadius.circular(5)),
+              child: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: Colors.white,
+              )),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => introLoginPage()));
+            },
+        ),
+        actions: [
+          IconButton(
+            icon: Container(
+                height: 30,
+                width: 30,
+                decoration: BoxDecoration(
+                    color: Colors.grey, borderRadius: BorderRadius.circular(5)),
+                child: Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                )),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomaPage()));
+            },
+          ),
+        ],
+      ),
       floatingActionButtonLocation:
       FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
@@ -41,7 +79,7 @@ class HomaPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Hello, how are you Alex?',
+                          'Hello, how are you Mario?',
                           style: TextStyle(fontSize: 23,color: Color(0xff005ab3),fontWeight: FontWeight.w600,fontFamily: 'AndikaNewBasic',
 
                           ),),
@@ -76,93 +114,99 @@ class HomaPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
-                                child: courses(
-                                    'Bussiness',
-                                    'Extensive documentation active community and tutorial videos',
-                                    'assest/images/bussiness.jpg',
-                                    Color(0xffe46b29),
-                                    Color(0xffeeeff3)),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
-                                child: courses(
-                                    'SocialMedia',
-                                    'Extensive documentation active community and tutorial videos',
-                                    'assest/images/social.jpg',
-                                    Color(0xffe46b29),
-                                    Color(0xffeeeff3)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
-                                child: courses(
-                                    'Mathematic',
-                                    'Extensive documentation active community and tutorial videos',
-                                    'assest/images/math.png',
-                                    Color(0xffe46b29),
-                                    Color(0xffeeeff3)),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
-                                child: courses(
-                                    'Programming',
-                                    'Extensive documentation active community and tutorial videos',
-                                    'assest/images/programing.png',
-                                    Color(0xffe46b29),
-                                    Color(0xffeeeff3)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
-                                child: courses(
-                                    'Medecine',
-                                    'Extensive documentation active community and tutorial videos',
-                                    'assest/images/medecine.png',
-                                    Color(0xffe46b29),
-                                    Color(0xffeeeff3)),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
-                                child: courses(
-                                    'The Space',
-                                    'Extensive documentation active community and tutorial videos',
-                                    'assest/images/space.png',
-                                    Color(0xffe46b29),
-                                    Color(0xffeeeff3)),
-                              ),
-                            ],
-                          ),
-                        ],
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pushReplacement(
+                            context, MaterialPageRoute(builder: (BuildContext context) => CourseScreen()));
+                      },
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: courses(
+                                      'Bussiness',
+                                      'Extensive documentation active community and tutorial videos',
+                                      'assest/images/bussiness.jpg',
+                                      Color(0xffe46b29),
+                                      Color(0xffeeeff3)),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: courses(
+                                      'SocialMedia',
+                                      'Extensive documentation active community and tutorial videos',
+                                      'assest/images/social.jpg',
+                                      Color(0xffe46b29),
+                                      Color(0xffeeeff3)),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: courses(
+                                      'Mathematic',
+                                      'Extensive documentation active community and tutorial videos',
+                                      'assest/images/math.png',
+                                      Color(0xffe46b29),
+                                      Color(0xffeeeff3)),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: courses(
+                                      'Programming',
+                                      'Extensive documentation active community and tutorial videos',
+                                      'assest/images/programing.png',
+                                      Color(0xffe46b29),
+                                      Color(0xffeeeff3)),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: courses(
+                                      'Medecine',
+                                      'Extensive documentation active community and tutorial videos',
+                                      'assest/images/medecine.png',
+                                      Color(0xffe46b29),
+                                      Color(0xffeeeff3)),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: courses(
+                                      'The Space',
+                                      'Extensive documentation active community and tutorial videos',
+                                      'assest/images/space.png',
+                                      Color(0xffe46b29),
+                                      Color(0xffeeeff3)),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(
