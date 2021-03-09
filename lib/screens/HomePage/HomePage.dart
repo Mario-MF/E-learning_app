@@ -85,12 +85,12 @@ class HomaPage extends StatelessWidget {
                           ),),
 
                         Container(
-                          height: 65,
-                          width: 70,
+                          height: 90,
+                          width: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                              image: AssetImage('assest/images/profile.png'
+                              image: AssetImage('assest/images/profile_me.PNG'
                             )
                           ),
 
@@ -225,34 +225,44 @@ class HomaPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Column(
-                            children: [
-                              mostviews(
-                                rate: 4.5,
-                                  image: 'assest/images/unity.png',
-                                  title: 'Unity For Designer',
-                                  time: 'Duaration: 14hr 45min'),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pushReplacement(
+                            context, MaterialPageRoute(builder: (BuildContext context) => CourseScreen()));
+                      },
 
-                              SizedBox(height: 8,),
-                              mostviews(
-                                  rate: 3.1,
-                                  image: 'assest/images/spacee.png',
-                                  title: 'The awesome space',
-                                  time: 'Duaration: 25hr 32min'),
-                              SizedBox(height: 8,),
-                              mostviews(
-                                  rate: 4.0,
-                                  image: 'assest/images/ui.png',
-                                  title: 'UX/UI Design Advanced',
-                                  time: 'Duaration: 14hr 45min'),
-                            ],
+
+
+
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            child: Column(
+                              children: [
+                                mostviews(
+                                  rate: 4.5,
+                                    image: 'assest/images/unity.png',
+                                    title: 'Unity For Designer',
+                                    time: 'Duaration: 14hr 45min'),
+
+                                SizedBox(height: 8,),
+                                mostviews(
+                                    rate: 3.1,
+                                    image: 'assest/images/spacee.png',
+                                    title: 'The awesome space',
+                                    time: 'Duaration: 25hr 32min'),
+                                SizedBox(height: 8,),
+                                mostviews(
+                                    rate: 4.0,
+                                    image: 'assest/images/ui.png',
+                                    title: 'UX/UI Design Advanced',
+                                    time: 'Duaration: 14hr 45min'),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -272,61 +282,67 @@ class HomaPage extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  children: [
-                                    Container(
-                                      width:
-                                          MediaQuery.of(context).size.width * 0.5,
-                                      child: newcourses(
-                                          'flutter',
-                                          'Extensive documentation active community and tutorial videos',
-                                          'assest/images/flutter.png',
-                                          Color(0xff1a6cda),
-                                          Color(0xffeeeff3)),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      width:
-                                          MediaQuery.of(context).size.width * 0.5,
-                                      child: courses(
-                                          'economic',
-                                          'Extensive documentation active community and tutorial videos',
-                                          'assest/images/ico.jpg',
-                                          Color(0xff1a6cda),
-                                          Color(0xffeeeff3)),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      width:
-                                          MediaQuery.of(context).size.width * 0.5,
-                                      child: courses(
-                                          'dentist',
-                                          'Extensive documentation active community and tutorial videos',
-                                          'assest/images/din.png',
-                                          Color(0xff1a6cda),
-                                          Color(0xffeeeff3)),
-                                    ),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.pushReplacement(
+                                  context, MaterialPageRoute(builder: (BuildContext context) => CourseScreen()));
+                            },
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Container(
+                                        width:
+                                            MediaQuery.of(context).size.width * 0.5,
+                                        child: newcourses(
+                                            'flutter',
+                                            'Extensive documentation active community and tutorial videos',
+                                            'assest/images/flutter.png',
+                                            Color(0xff1a6cda),
+                                            Color(0xffeeeff3)),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        width:
+                                            MediaQuery.of(context).size.width * 0.5,
+                                        child: courses(
+                                            'economic',
+                                            'Extensive documentation active community and tutorial videos',
+                                            'assest/images/ico.jpg',
+                                            Color(0xff1a6cda),
+                                            Color(0xffeeeff3)),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        width:
+                                            MediaQuery.of(context).size.width * 0.5,
+                                        child: courses(
+                                            'dentist',
+                                            'Extensive documentation active community and tutorial videos',
+                                            'assest/images/din.png',
+                                            Color(0xff1a6cda),
+                                            Color(0xffeeeff3)),
+                                      ),
 
-                                  ],
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(
